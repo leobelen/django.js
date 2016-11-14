@@ -11,10 +11,10 @@ from djangojs.conf import settings
 from djangojs.views import UrlsJsonView, ContextJsonView, JsInitView
 
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
     url(r'^init\.js$', JsInitView.as_view(), name='django_js_init'),
     url(r'^urls$', UrlsJsonView.as_view(), name='django_js_urls'),
     url(r'^context$', ContextJsonView.as_view(), name='django_js_context'),
     url(r'^translation$', JavaScriptCatalog.as_view(domain="django"), name='js_catalog'),
-    prefix_default_language=False,
-)
+]
+
